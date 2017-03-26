@@ -1,0 +1,80 @@
+body {
+    height: 100%auto;
+    width: 100%auto;
+    margin: 0;
+}
+
+#newTitle {
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    color: #7D717F;
+    margin: auto;
+    width: 35%;
+    text-align: center;
+}
+
+#container {
+    height: 600px;
+    width: 480px;
+    border: 20px solid #BB6CE5;
+    border-radius: 20px;
+    position: relative;
+    margin: auto;
+    background: url('http://orig11.deviantart.net/9369/f/2014/100/9/f/space_by_littlefiredragon-d7dz6nj.png');
+    overflow: hidden;
+}
+
+#nyan {
+    position: absolute;
+    background: url('http://www.mersenneforum.org/avatars/avatar13483_8.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    top: 200px;
+    left: 10%;
+}
+
+.wall {
+    position: absolute;
+    /*height: 225px;*/
+    width: 55px;
+    right: -50px;
+    border-radius: 5px;
+    background: url('http://www.curitibaco.com.br/apoio/img/produtos/a70628d843b34dd3cdf20eb22fc7bdd2.jpg');
+}
+
+#topWall {
+    top: 0;
+    height: 100px;
+}
+
+#bottomWall {
+    bottom: 0;
+    height: 280px;
+}
+
+#button1 {
+    text-align: center;
+    margin: 25px;
+}
+
+#restartBttn {
+    border: 5px solid #BB6CE5;
+    border-radius: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #7D717F;
+    cursor: pointer;
+}
+
+#scoreDiv {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    color: #7D71BD;
+    text-align: center;
+}
+
+.scSpd {
+    color: #FF4066;
+}
