@@ -59,6 +59,7 @@ $(document).ready(function () {
             // changing the initWallPosition into a new value when it goes out from the container
             // if the $wallCurrentPosition is greater then container width return to the original position
     }
+
     if ($jumpCat === false) {
       gravity()
     }
