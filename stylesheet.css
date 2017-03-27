@@ -6,6 +6,7 @@ body {
 
 #background {
     background: url('http://wallpapercave.com/wp/SZdhPUH.jpg');
+    height: 1200px;
 }
 
 #newTitle {
@@ -67,9 +68,24 @@ body {
     height: 280px;
 }
 
-#button1 {
+#buttonOne {
     text-align: center;
     margin: 25px;
+}
+
+#buttonTwo {
+  text-align: center;
+  margin: 25px;
+}
+
+#startButton {
+    border: 5px solid #BB6CE5;
+    border-radius: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #1F1226;
+    cursor: pointer;
+    text-align: center;
 }
 
 #restartBttn {
@@ -79,6 +95,7 @@ body {
     font-size: 50px;
     color: #1F1226;
     cursor: pointer;
+    text-align: center;
 }
 
 #scoreDiv {
@@ -86,7 +103,7 @@ body {
     font-size: 40px;
     color: #BB6CE5;
     text-align: center;
-
+    margin: 5px;
 }
 
 .scSpd {
