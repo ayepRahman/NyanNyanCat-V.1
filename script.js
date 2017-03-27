@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // creating all var to the <Element>
     var $cont = $('#container')
     var $cat = $('#nyan')
@@ -22,15 +23,19 @@ $(document).ready(function() {
     var $catPosition = parseInt($cat.css('left'))
     var $speedPixel = 1 // PIXEL of value!!!
     var $jumpCat = false
-
-    /////////START GAME BUTTON/////////////////////////////////////
-    /////////////MOVING WALL///////////////////////////////////////
+    // //////////// AUDIO////////////////////////////////////////////
+    var $bgSound = $('audio')[0].play()
+    var $deathSound = $('#deathSound')
+    //////////////////START GAME/////////////////////////////////////
     var $gameStart = setInterval(function() {
+
+
         var $wallCurrentPosition = parseInt($wall.css('right'))
         var $topCurrentHgt = parseInt($topWall.css('height'))
         var $btmCurrentHgt = parseInt($bottomWall.css('height'))
         // checking the condition of the collsion of topwall,bottomwall,topcontainer and bottom container
         if (collision($cat, $topWall) || collision($cat, $bottomWall) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight) {
+
             gameOver()
         } else {
             console.log($wallCurrentPosition, $contWidth, $catPosition)
@@ -47,10 +52,10 @@ $(document).ready(function() {
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
         if ($wallCurrentPosition > $contWidth) {
-            var $max = 250
+            var $max = 280
             var $min = 0
             var $wallHeight = Math.random() * ($max - $min) + $min
-            var $wallHeight = $wallHeight % 250
+            var $wallHeight = $wallHeight % 280
             var $newWallHeight = Math.round($wallHeight) // round of the float
             $topWall.css('height', $topWallHght + $newWallHeight)
             $bottomWall.css('height', $btmWallHgt - $newWallHeight)
@@ -68,7 +73,7 @@ $(document).ready(function() {
         }
 
         $wall.css('right', $wallCurrentPosition + $speedPixel)
-        // updating the $wallCurrentPosition + speedValue(pixel)
+        // updating the $wallCurrentPosition + speedValue(pixel), the speed of the moving wall
     }, 1)
     // ////////// keydown Event ///////////////////////////////////
     $(document).on('keydown', function(e) {
@@ -97,14 +102,16 @@ $(document).ready(function() {
     // /////////// STOP GAME /////////////////////////////////////////
     function gameOver() {
         clearInterval($gameStart)
+        $('audio')[1].play()
+        $('audio')[0].pause()
         $gameOver = true
     }
-    //////// RESTARTBUTTON//////////////////////////////////////////
+    // ////// RESTARTBUTTON//////////////////////////////////////////
     $restartBttn.click(function() {
         location.reload()
         // just simply reloading the page
     })
-    //////// COLLISION ///////////////////////////////////////////////
+    // ////// COLLISION ///////////////////////////////////////////////
     function collision($catpstn, $wallpstn) {
         // The .offset() method allows us to retrieve the current position of an element relative to the document.
         // The outerHeight() Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer height of every matched element.
@@ -125,9 +132,6 @@ $(document).ready(function() {
         if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false
         return true
     }
-
-
-
 
 
 })
