@@ -55,7 +55,7 @@ $(document).ready(function() {
             // wall positon is greater then the container with the cat width add score to the score.text
             if ($wallOneCurrentPosition > $contWidth - $catPosition || $wallTwoCurrentPosition > $contWidth - $catPosition) {
                 if ($scoreUpdate === false) {
-                    $score.text(parseInt($score.text()) + 1)
+                    $score.text(parseInt($score.text()) + 10)
                     $scoreUpdate = true
                     // if score not update after cat pass the walls, add score by 1
                 }
@@ -64,7 +64,7 @@ $(document).ready(function() {
         // //// updating the score ///////////
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
-        if ($wallOneCurrentPosition > $contWidth + 450) {
+        if ($wallOneCurrentPosition > $contWidth + 440) {
             // console.log here to check if collision is detected
             var $max = 280
             var $min = 0
@@ -149,7 +149,6 @@ $(document).ready(function() {
         clearInterval($gameStart)
         $('audio')[1].play()
         $('audio')[0].pause()
-
         $gameOver = true
     }
 
