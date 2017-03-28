@@ -29,7 +29,7 @@ body {
 
 #container {
     height: 600px;
-    width: 800px;
+    width: 500px;
     border: 20px solid #BB6CE5;
     border-radius: 20px;
     position: relative;
@@ -59,7 +59,7 @@ body {
 
 #topWallOne {
     top: 0;
-    height: 90px;
+    height: 100px;
 }
 
 #bottomWallOne {
@@ -68,16 +68,16 @@ body {
 }
 /*///////////////////// WALL TWO /////////////////////////////////*/
 .wallTwo {
-    position: absolute;
-    width: 55px;
-    right: -550px;
-    border-radius: 5px;
-    background: url('./image/walls.png');
+  position: absolute;
+  width: 55px;
+  right: -500px;
+  border-radius: 5px;
+  background: url('./image/walls.png');
 }
 
 #topWallTwo {
     top: 0;
-    height: 90px;
+    height: 100px;
 }
 
 #bottomWallTwo {

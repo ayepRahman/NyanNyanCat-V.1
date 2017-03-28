@@ -48,14 +48,14 @@ $(document).ready(function() {
         var $btmOneCrrtHgt = parseInt($bottomWallOne.css('height'))
         var $topTwoCrrtHgt = parseInt($topWallTwo.css('height'))
         var $btmTwoCrrtHgt = parseInt($bottomWallTwo.css('height'))
-        // checking the condition of the collsion of topwall,bottomwall,topcontainer and bottom container
-        if (collision($cat, $topWallOne) || collision($cat, $bottomWallOne) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight /*collision($cat, $topWallTwo) || collision($cat, $bottomWallTwo) */ ) {
+        // checking the condition of the collision of topwall,bottomwall,topcontainer and bottom container
+        if (collision($cat, $topWallOne) || collision($cat, $bottomWallOne) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight || collision($cat, $topWallTwo) || collision($cat, $bottomWallTwo)) {
             gameOver()
         } else {
             // wall positon is greater then the container with the cat width add score to the score.text
-            if ($wallOneCurrentPosition /*&& $wallTwoCurrentPosition*/ > $contWidth - $catPosition) {
+            if ($wallOneCurrentPosition > $contWidth - $catPosition || $wallTwoCurrentPosition > $contWidth - $catPosition) {
                 if ($scoreUpdate === false) {
-                    $score.text(parseInt($score.text()) + 5)
+                    $score.text(parseInt($score.text()) + 1)
                     $scoreUpdate = true
                     // if score not update after cat pass the walls, add score by 1
                 }
@@ -64,27 +64,50 @@ $(document).ready(function() {
         // //// updating the score ///////////
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
-        if ($wallOneCurrentPosition /* && wallTwoCurrentPosition*/ > $contWidth) {
+        if ($wallOneCurrentPosition > $contWidth + 500) {
+            // console.log here to check if collision is detected
             var $max = 280
             var $min = 0
             var $wallHeight = Math.random() * ($max - $min) + $min
             var $wallHeight = $wallHeight % 280
             var $newWallHeight = Math.round($wallHeight) // round of the float
+
             $topWallOne.css('height', $topWallOneHght + $newWallHeight)
             $bottomWallOne.css('height', $btmWallOneHgt - $newWallHeight)
-            /*$topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
-            $bottomWallOne.css('height', $btmWallTwoHgt - $newWallHeight)*/
+
+
             $topOneCrrtHgt = $topWallOneHght
             $btmOneCrrtHgt = $btmWallOneHgt
-            /* $topTwoCrrtHgt = $topWallTwoHght
-            $btmTwoCrrtHgt = $btmWallTwoHgt*/
+
+
             $scoreUpdate = false
             $gameOver = false
             $wallOneCurrentPosition = $initWallOnePst
-            /* $wallTwoCurrentPosition = $initWallTwoPst*/
-            // changing the initWallPosition into a new value when it goes out from the container
-            // if the $wallOneCurrentPosition is greater then container width return to the original position
+
         }
+        if ($wallTwoCurrentPosition > $contWidth) {
+
+
+          var $max = 280
+          var $min = 0
+          var $wallHeight = Math.random() * ($max - $min) + $min
+          var $wallHeight = $wallHeight % 280
+          var $newWallHeight = Math.round($wallHeight) // round of the float
+
+          $topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
+          $bottomWallTwo.css('height', $btmWallTwoHgt - $newWallHeight)
+
+          $topTwoCrrtHgt = $topWallTwoHght
+          $btmTwoCrrtHgt = $btmWallTwoHgt
+          $scoreUpdate = false
+          $gameOver = false
+          $wallTwoCurrentPosition = $initWallTwoPst
+
+
+        }
+
+
+
 
         if ($jumpCat === false) {
             gravity() // after cat is jump by pixel/height it run the gravity funtion down
@@ -129,6 +152,8 @@ $(document).ready(function() {
 
         $gameOver = true
     }
+
+
     // ////// RESTARTBUTTON//////////////////////////////////////////
     $restartBttn.click(function() {
         location.reload()
