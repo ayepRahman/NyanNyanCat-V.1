@@ -46,12 +46,14 @@ $(document).ready(function() {
         /////////////////////////////////////////////////////////////
         var $topOneCrrtHgt = parseInt($topWallOne.css('height'))
         var $btmOneCrrtHgt = parseInt($bottomWallOne.css('height'))
+        var $topTwoCrrtHgt = parseInt($topWallTwo.css('height'))
+        var $btmTwoCrrtHgt = parseInt($bottomWallTwo.css('height'))
         // checking the condition of the collsion of topwall,bottomwall,topcontainer and bottom container
-        if (collision($cat, $topWallOne) || collision($cat, $bottomWallOne) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight) {
+        if (collision($cat, $topWallOne) || collision($cat, $bottomWallOne) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight /*collision($cat, $topWallTwo) || collision($cat, $bottomWallTwo) */ ) {
             gameOver()
         } else {
             // wall positon is greater then the container with the cat width add score to the score.text
-            if ($wallOneCurrentPosition > $contWidth - $catPosition) {
+            if ($wallOneCurrentPosition /*&& $wallTwoCurrentPosition*/ > $contWidth - $catPosition) {
                 if ($scoreUpdate === false) {
                     $score.text(parseInt($score.text()) + 5)
                     $scoreUpdate = true
@@ -62,7 +64,7 @@ $(document).ready(function() {
         // //// updating the score ///////////
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
-        if ($wallOneCurrentPosition > $contWidth) {
+        if ($wallOneCurrentPosition /* && wallTwoCurrentPosition*/ > $contWidth) {
             var $max = 280
             var $min = 0
             var $wallHeight = Math.random() * ($max - $min) + $min
@@ -70,11 +72,16 @@ $(document).ready(function() {
             var $newWallHeight = Math.round($wallHeight) // round of the float
             $topWallOne.css('height', $topWallOneHght + $newWallHeight)
             $bottomWallOne.css('height', $btmWallOneHgt - $newWallHeight)
+            /*$topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
+            $bottomWallOne.css('height', $btmWallTwoHgt - $newWallHeight)*/
             $topOneCrrtHgt = $topWallOneHght
             $btmOneCrrtHgt = $btmWallOneHgt
+            /* $topTwoCrrtHgt = $topWallTwoHght
+            $btmTwoCrrtHgt = $btmWallTwoHgt*/
             $scoreUpdate = false
             $gameOver = false
             $wallOneCurrentPosition = $initWallOnePst
+            /* $wallTwoCurrentPosition = $initWallTwoPst*/
             // changing the initWallPosition into a new value when it goes out from the container
             // if the $wallOneCurrentPosition is greater then container width return to the original position
         }
@@ -82,8 +89,8 @@ $(document).ready(function() {
         if ($jumpCat === false) {
             gravity() // after cat is jump by pixel/height it run the gravity funtion down
         }
-
         $wallOne.css('right', $wallOneCurrentPosition + $speedPixel)
+        $wallTwo.css('right', $wallTwoCurrentPosition + $speedPixel)
         // updating the $wallOneCurrentPosition + speedValue(pixel), the speed of the moving wall
     }, 1)
     // ////////// keydown Event ///////////////////////////////////
