@@ -2,9 +2,25 @@ $(document).ready(function() {
     // creating all var to the <Element>
     var $cont = $('#container')
     var $cat = $('#nyan')
-    var $wall = $('.wall')
-    var $topWall = $('#topWall')
-    var $bottomWall = $('#bottomWall')
+    // //////// WALL ONE////////////////////
+    var $wallOne = $('.wallOne')
+    var $topWallOne = $('#topWallOne')
+    var $bottomWallOne = $('#bottomWallOne')
+    // /////////// WALL ONE H/W /////////////////////////////////////////////
+    var wallOneHeight = parseInt($wallOne.css('height'))
+    var $topWallOneHght = parseInt($topWallOne.css('height'))
+    var $btmWallOneHgt = parseInt($bottomWallOne.css('height'))
+    var $initWallOnePst = parseInt($wallOne.css('right'))
+    // /////// WALL TWO ///////////////////////
+    var $wallTwo = $('.wallTwo')
+    var $topWallTwo = $('#topWallTwo')
+    var $bottomWallTwo = $('#bottomWallTwo')
+    // ////////// WALL TWO H/W /////////////////////////////
+    var wallTwoHeight = parseInt($wallTwo.css('height'))
+    var $topWallTwoHght = parseInt($topWallTwo.css('height'))
+    var $btmWallTwoHgt = parseInt($bottomWallTwo.css('height'))
+    var $initWallTwoPst = parseInt($wallTwo.css('right'))
+    // /////////////////////////////////////////
     var $restartBttn = $('#restartBttn')
     var $score = $('#score')
     var $scoreUpdate = false
@@ -12,11 +28,6 @@ $(document).ready(function() {
     // //////////// CONTAINER ///////////////////////////////////////
     var $contHeight = parseInt($cont.height())
     var $contWidth = parseInt($cont.width())
-    // /////////// WALL /////////////////////////////////////////////
-    var $mainWallHeight = parseInt($wall.css('height'))
-    var $topWallHght = parseInt($topWall.css('height'))
-    var $btmWallHgt = parseInt($bottomWall.css('height'))
-    var $initWallPosition = parseInt($wall.css('right'))
     // ////////// CAT ///////////////////////////////////////////////
     var $catHeight = parseInt($cat.height())
     var $catPosition = parseInt($cat.css('left'))
@@ -26,19 +37,23 @@ $(document).ready(function() {
     var $bgSound = $('audio')[0].play()
     var $deathSound = $('#deathSound')
     // ////////////////START GAME/////////////////////////////////////
+
     var $gameOver = false
     var $gameStart = setInterval(function() {
-        var $wallCurrentPosition = parseInt($wall.css('right'))
-        var $topCurrentHgt = parseInt($topWall.css('height'))
-        var $btmCurrentHgt = parseInt($bottomWall.css('height'))
+        ///////////// currentPosition ///////////////////////////////
+        var $wallOneCurrentPosition = parseInt($wallOne.css('right'))
+        var $wallTwoCurrentPosition = parseInt($wallTwo.css('right'))
+        /////////////////////////////////////////////////////////////
+        var $topOneCrrtHgt = parseInt($topWallOne.css('height'))
+        var $btmOneCrrtHgt = parseInt($bottomWallOne.css('height'))
         // checking the condition of the collsion of topwall,bottomwall,topcontainer and bottom container
-        if (collision($cat, $topWall) || collision($cat, $bottomWall) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight) {
+        if (collision($cat, $topWallOne) || collision($cat, $bottomWallOne) || parseInt($cat.css('top')) <= 0 || parseInt($cat.css('top')) > $contHeight - $catHeight) {
             gameOver()
         } else {
             // wall positon is greater then the container with the cat width add score to the score.text
-            if ($wallCurrentPosition > $contWidth - $catPosition) {
+            if ($wallOneCurrentPosition > $contWidth - $catPosition) {
                 if ($scoreUpdate === false) {
-                    $score.text(parseInt($score.text()) + 1)
+                    $score.text(parseInt($score.text()) + 5)
                     $scoreUpdate = true
                     // if score not update after cat pass the walls, add score by 1
                 }
@@ -47,29 +62,29 @@ $(document).ready(function() {
         // //// updating the score ///////////
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
-        if ($wallCurrentPosition > $contWidth) {
+        if ($wallOneCurrentPosition > $contWidth) {
             var $max = 280
             var $min = 0
             var $wallHeight = Math.random() * ($max - $min) + $min
             var $wallHeight = $wallHeight % 280
             var $newWallHeight = Math.round($wallHeight) // round of the float
-            $topWall.css('height', $topWallHght + $newWallHeight)
-            $bottomWall.css('height', $btmWallHgt - $newWallHeight)
-            $topCurrentHgt = $topWallHght
-            $btmCurrentHgt = $btmWallHgt
+            $topWallOne.css('height', $topWallOneHght + $newWallHeight)
+            $bottomWallOne.css('height', $btmWallOneHgt - $newWallHeight)
+            $topOneCrrtHgt = $topWallOneHght
+            $btmOneCrrtHgt = $btmWallOneHgt
             $scoreUpdate = false
             $gameOver = false
-            $wallCurrentPosition = $initWallPosition
+            $wallOneCurrentPosition = $initWallOnePst
             // changing the initWallPosition into a new value when it goes out from the container
-            // if the $wallCurrentPosition is greater then container width return to the original position
+            // if the $wallOneCurrentPosition is greater then container width return to the original position
         }
 
         if ($jumpCat === false) {
             gravity() // after cat is jump by pixel/height it run the gravity funtion down
         }
 
-        $wall.css('right', $wallCurrentPosition + $speedPixel)
-        // updating the $wallCurrentPosition + speedValue(pixel), the speed of the moving wall
+        $wallOne.css('right', $wallOneCurrentPosition + $speedPixel)
+        // updating the $wallOneCurrentPosition + speedValue(pixel), the speed of the moving wall
     }, 1)
     // ////////// keydown Event ///////////////////////////////////
     $(document).on('keydown', function(e) {
@@ -106,7 +121,6 @@ $(document).ready(function() {
         $('audio')[0].pause()
 
         $gameOver = true
-
     }
     // ////// RESTARTBUTTON//////////////////////////////////////////
     $restartBttn.click(function() {
@@ -131,8 +145,9 @@ $(document).ready(function() {
         var b2 = y2 + h2 // wall spaces height
         var r2 = x2 + w2 // wall space width
 
-        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2)
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
             return false
+        }
         return true
     }
 })

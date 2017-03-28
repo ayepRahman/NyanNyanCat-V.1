@@ -48,8 +48,8 @@ body {
     top: 200px;
     left: 10%;
 }
-
-.wall {
+/*//////////////// WALL ONE //////////////////////////////*/
+.wallOne {
     position: absolute;
     width: 55px;
     right: -50px;
@@ -57,16 +57,34 @@ body {
     background: url('./image/walls.png');
 }
 
-#topWall {
+#topWallOne {
     top: 0;
     height: 90px;
 }
 
-#bottomWall {
+#bottomWallOne {
     bottom: 0;
     height: 300px;
 }
+/*///////////////////// WALL TWO /////////////////////////////////*/
+.wallTwo {
+    position: absolute;
+    width: 55px;
+    right: -550px;
+    border-radius: 5px;
+    background: url('./image/walls.png');
+}
 
+#topWallTwo {
+    top: 0;
+    height: 90px;
+}
+
+#bottomWallTwo {
+    bottom: 0;
+    height: 300px;
+}
+/*//////////////////// End of WALLTWO /////////////////////*/
 #buttonOne {
     text-align: center;
     margin: 25px;
