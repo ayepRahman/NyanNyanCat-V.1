@@ -75,19 +75,14 @@ $(document).ready(function() {
             $topWallOne.css('height', $topWallOneHght + $newWallHeight)
             $bottomWallOne.css('height', $btmWallOneHgt - $newWallHeight)
 
-
             $topOneCrrtHgt = $topWallOneHght
             $btmOneCrrtHgt = $btmWallOneHgt
-
 
             $scoreUpdate = false
             $gameOver = false
             $wallOneCurrentPosition = $initWallOnePst
-
-        }
+          }
         if ($wallTwoCurrentPosition > $contWidth) {
-
-
           var $max = 280
           var $min = 0
           var $wallHeight = Math.random() * ($max - $min) + $min
@@ -102,13 +97,7 @@ $(document).ready(function() {
           $scoreUpdate = false
           $gameOver = false
           $wallTwoCurrentPosition = $initWallTwoPst
-
-
         }
-
-
-
-
         if ($jumpCat === false) {
             gravity() // after cat is jump by pixel/height it run the gravity funtion down
         }
@@ -151,8 +140,6 @@ $(document).ready(function() {
         $('audio')[0].pause()
         $gameOver = true
     }
-
-
     // ////// RESTARTBUTTON//////////////////////////////////////////
     $restartBttn.click(function() {
         location.reload()
