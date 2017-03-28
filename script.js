@@ -64,7 +64,7 @@ $(document).ready(function() {
         // //// updating the score ///////////
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
-        if ($wallOneCurrentPosition > $contWidth + 500) {
+        if ($wallOneCurrentPosition > $contWidth + 450) {
             // console.log here to check if collision is detected
             var $max = 280
             var $min = 0
