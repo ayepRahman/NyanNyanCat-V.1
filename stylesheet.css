@@ -5,7 +5,7 @@ body {
 }
 
 #background {
-    background: url('http://wallpapercave.com/wp/SZdhPUH.jpg');
+    background: url('./image/myBgImg.jpg');
     height: 1200px;
 }
 
@@ -34,16 +34,16 @@ body {
     border-radius: 20px;
     position: relative;
     margin: auto;
-    background: url('http://orig11.deviantart.net/9369/f/2014/100/9/f/space_by_littlefiredragon-d7dz6nj.png');
+    background: url('./image/containerImg.png');
     overflow: hidden;
 }
 
 #nyan {
     position: absolute;
-    background: url('http://www.mersenneforum.org/avatars/avatar13483_8.gif');
+    background: url('./image/catNyan.gif');
     background-size: contain;
     background-repeat: no-repeat;
-    height: 70px;
+    height: 40px;
     width: 70px;
     top: 200px;
     left: 10%;
@@ -51,11 +51,10 @@ body {
 
 .wall {
     position: absolute;
-    /*height: 225px;*/
     width: 55px;
     right: -50px;
     border-radius: 5px;
-    background: url('http://piq.codeus.net/static/media/userpics/piq_142658_400x400.png');
+    background: url('./image/walls.png');
 }
 
 #topWall {
