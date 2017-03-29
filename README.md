@@ -56,7 +56,7 @@ What happend when you get A Flappy Bird && A Nyan Cat together. Introducing Nyan
 * [clearInterval](https://www.w3schools.com/jsref/met_win_clearinterval.asp )
 * [.play()](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement/play )
 * [.pause()](https://www.w3schools.com/tags/av_met_pause.asp )
-* [.click(function)]https://api.jquery.com/click/( )
+* [.click(function)](https://api.jquery.com/click/( )
 
 **Workflow**
 1) Drafting the basic game structure.
