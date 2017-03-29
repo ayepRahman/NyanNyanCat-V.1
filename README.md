@@ -32,6 +32,13 @@ ENTER: To Jump, You Can also Hold the Button To Fly
 * [.outerHeight()](http://api.jquery.com/outerheight/)
 * [.outerWidth()](http://api.jquery.com/outerwidth/)
 
+**Workflow**
+1) Drafting the basic game structure.
+2) Coding game logics.
+3) Implement game graphic.
+4) Debug.
+
+
 **What I would've done differently**
 * Would Love to touch on Canvas
 * Creating My own Animated Cat Using sprites with an arrays and using forEach()
