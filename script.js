@@ -37,8 +37,8 @@ $(document).ready(function() {
     var $bgSound = $('audio')[0].play()
     var $deathSound = $('#deathSound')
     // ////////////////START GAME/////////////////////////////////////
-
     var $gameOver = false
+
     var $gameStart = setInterval(function() {
         ///////////// currentPosition ///////////////////////////////
         var $wallOneCurrentPosition = parseInt($wallOne.css('right'))
