@@ -3,7 +3,7 @@
 [Live Demo Here](https://wdi-sg.github.io/wdi-project-1-ayepRahman/)
 
 
-![NyanNyan Cat V.1](http://i.imgur.com/gDEA5mD.png)
+![NyanNyan Cat V.1 LOGO](http://i.imgur.com/gDEA5mD.png)
 
 What happend when you get A Flappy Bird && A Nyan Cat together. Introducing NyanNyan Cat V.1. Where you need to get the Nyan through random RAINBOW walls approaching you.
 **Player**
