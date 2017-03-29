@@ -6,6 +6,7 @@
 ![NyanNyan Cat V.1 LOGO](http://i.imgur.com/gDEA5mD.png)
 
 What happend when you get A Flappy Bird && A Nyan Cat together. Introducing NyanNyan Cat V.1. Where you need to get the Nyan through random RAINBOW walls approaching you.
+
 **Player**
 - ENTER: To Jump, You Can also Hold the Button To Fly
 
