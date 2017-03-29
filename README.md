@@ -6,6 +6,8 @@
 ![NyanNyan Cat V.1](http://i.imgur.com/gDEA5mD.png)
 
 What happend when you get A Flappy Bird && A Nyan Cat together. Introducing NyanNyan Cat V.1. Where you need to get the Nyan through random RAINBOW walls approaching you.
+**Player**
+- ENTER: To Jump, You Can also Hold the Button To Fly
 
 **Gameplay**
 - Controlling Nyan to go through randomise moving wall to score points!
@@ -31,9 +33,6 @@ What happend when you get A Flappy Bird && A Nyan Cat together. Introducing Nyan
 
 7) On GameOver, to restart game press the Restart Button on the bottom of the page .onload()
 
-**Player**
-
-ENTER: To Jump, You Can also Hold the Button To Fly
 
 **Development**
 - HTML5
