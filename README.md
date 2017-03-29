@@ -10,6 +10,27 @@ What happend when you get A Flappy Bird && A Nyan Cat together. Introducing Nyan
 **Gameplay**
 - Controlling Nyan to go through randomise moving wall to score points!
 
+**GameFlow**
+1) Initial Game with Nyan Cat position x,y
+
+2) background sound .play() on page load
+
+3) setInterval creates the moving walls and randomise the height
+
+4) collsion will have 6 condition
+- Nyan hitting the top container
+- Nyan hitting the bottom containe
+- Nyan hitting the top wall height
+- Nyan hitting the bottom wall height
+- Nyan hitting the top wall base width
+- Nyan hitting the bottom wall base width
+
+5) On Collision, background sound .pause() and .play() death sound
+
+6) When cat goes through the gap, adding the score + 1
+
+7) On GameOver, to restart game press the Restart Button on the bottom of the page .onload()
+
 **Player**
 
 ENTER: To Jump, You Can also Hold the Button To Fly
@@ -31,6 +52,12 @@ ENTER: To Jump, You Can also Hold the Button To Fly
 * [.offset()](http://api.jquery.com/offset/)
 * [.outerHeight()](http://api.jquery.com/outerheight/)
 * [.outerWidth()](http://api.jquery.com/outerwidth/)
+* [.keydown()](https://api.jquery.com/keydown/ )
+* [.keyup()]( https://api.jquery.com/keyup/)
+* [clearInterval](https://www.w3schools.com/jsref/met_win_clearinterval.asp )
+* [.play()](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement/play )
+* [.pause()](https://www.w3schools.com/tags/av_met_pause.asp )
+* [.click(function)]https://api.jquery.com/click/( )
 
 **Workflow**
 1) Drafting the basic game structure.

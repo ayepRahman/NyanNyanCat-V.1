@@ -40,10 +40,10 @@ $(document).ready(function() {
     var $gameOver = false
 
     var $gameStart = setInterval(function() {
-        ///////////// currentPosition ///////////////////////////////
+        // /////////// currentPosition ///////////////////////////////
         var $wallOneCurrentPosition = parseInt($wallOne.css('right'))
         var $wallTwoCurrentPosition = parseInt($wallTwo.css('right'))
-        /////////////////////////////////////////////////////////////
+        // ///////////////////////////////////////////////////////////
         var $topOneCrrtHgt = parseInt($topWallOne.css('height'))
         var $btmOneCrrtHgt = parseInt($bottomWallOne.css('height'))
         var $topTwoCrrtHgt = parseInt($topWallTwo.css('height'))
@@ -81,22 +81,22 @@ $(document).ready(function() {
             $scoreUpdate = false
             $gameOver = false
             $wallOneCurrentPosition = $initWallOnePst
-          }
+        }
         if ($wallTwoCurrentPosition > $contWidth) {
-          var $max = 280
-          var $min = 0
-          var $wallHeight = Math.random() * ($max - $min) + $min
-          var $wallHeight = $wallHeight % 280
-          var $newWallHeight = Math.round($wallHeight) // round of the float
+            var $max = 280
+            var $min = 0
+            var $wallHeight = Math.random() * ($max - $min) + $min
+            var $wallHeight = $wallHeight % 280
+            var $newWallHeight = Math.round($wallHeight) // round of the float
 
-          $topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
-          $bottomWallTwo.css('height', $btmWallTwoHgt - $newWallHeight)
+            $topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
+            $bottomWallTwo.css('height', $btmWallTwoHgt - $newWallHeight)
 
-          $topTwoCrrtHgt = $topWallTwoHght
-          $btmTwoCrrtHgt = $btmWallTwoHgt
-          $scoreUpdate = false
-          $gameOver = false
-          $wallTwoCurrentPosition = $initWallTwoPst
+            $topTwoCrrtHgt = $topWallTwoHght
+            $btmTwoCrrtHgt = $btmWallTwoHgt
+            $scoreUpdate = false
+            $gameOver = false
+            $wallTwoCurrentPosition = $initWallTwoPst
         }
         if ($jumpCat === false) {
             gravity() // after cat is jump by pixel/height it run the gravity funtion down
