@@ -55,7 +55,7 @@ $(document).ready(function() {
             // wall positon is greater then the container with the cat width add score to the score.text
             if ($wallOneCurrentPosition > $contWidth - $catPosition || $wallTwoCurrentPosition > $contWidth - $catPosition) {
                 if ($scoreUpdate === false) {
-                    $score.text(parseInt($score.text()) + 10)
+                    $score.text(parseInt($score.text()) + 1)
                     $scoreUpdate = true
                     // if score not update after cat pass the walls, add score by 1
                 }
