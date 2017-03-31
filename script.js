@@ -29,6 +29,7 @@ $(document).ready(function () {
   var $contWidth = parseInt($cont.width())
   /* ########## CAT ########## */
   var $cat = $('#nyan')
+  var $catTop = $cat.css('top', parseInt($cat.css('top')))
   var $catHeight = parseInt($cat.height())
   var $catPosition = parseInt($cat.css('left'))
   var $speedPixel = 1 // PIXEL of value!!!
@@ -37,8 +38,7 @@ $(document).ready(function () {
   var $bgSound = $('audio')[0].play()
   var $deathSound = $('#deathSound')
   var $gameOver = false
-  //var $velocity = 0
-  //var $gravity = 1
+  var $gravity = 1.5
 
   /* ########## START GAME ########## */
   var $gameStart = setInterval(function () {
@@ -66,6 +66,7 @@ $(document).ready(function () {
         /* ########## UPDATING ########## */
         // changing the string of the return pixel into an integer
         // to check if the main wall hit the container width
+        /* ########## Wall One Condition ########## */
     if ($wallOneCurrentPosition > $contWidth + 440) {
       // console.log here to check if collision is detected
       var $max = 280
@@ -84,6 +85,7 @@ $(document).ready(function () {
       $gameOver = false
       $wallOneCurrentPosition = $initWallOnePst
     }
+    /* ########## Wall Two Condition ########## */
     if ($wallTwoCurrentPosition > $contWidth) {
       var $max = 280
       var $min = 0
@@ -91,8 +93,8 @@ $(document).ready(function () {
       var $wallHeight = $wallHeight % 280
       var $newWallHeight = Math.round($wallHeight) // round of the float
 
-      $topWallTwo.css('height', $topWallTwoHght + $newWallHeight)
-      $bottomWallTwo.css('height', $btmWallTwoHgt - $newWallHeight)
+      $topWallTwo.css('height', $topWallTwoHght - $newWallHeight)
+      $bottomWallTwo.css('height', $btmWallTwoHgt + $newWallHeight)
 
       $topTwoCrrtHgt = $topWallTwoHght
       $btmTwoCrrtHgt = $btmWallTwoHgt
@@ -109,7 +111,7 @@ $(document).ready(function () {
     $wallOne.css('right', $wallOneCurrentPosition + $speedPixel)
     $wallTwo.css('right', $wallTwoCurrentPosition + $speedPixel)
     // updating the $wallOneCurrentPosition + speedValue(pixel), the speed of the moving wall
-  }, 1)
+  }, 1) // <=== setInterval
   /* ########## KEYDOWN EVENT ########## */
   $(document).on('keydown', function (e) {
     var key = e.keyCode
@@ -134,7 +136,7 @@ $(document).ready(function () {
   }
   /* ########## GRAVITY CAT ########## */
   function gravity () {
-    $cat.css('top', parseInt($cat.css('top')) + 1.5 )
+    $cat.css('top', parseInt($cat.css('top')) + $gravity )
     // creating a gravity tt pushes the cat down
   }
 
