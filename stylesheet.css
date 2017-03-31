@@ -51,7 +51,7 @@ body {
     top: 200px;
     left: 10%;
 }
-/*//////////////// WALL ONE //////////////////////////////*/
+/*########## WALL ONE ##########*/
 .wallOne {
     position: absolute;
     width: 55px;
@@ -69,7 +69,7 @@ body {
     bottom: 0;
     height: 320px;
 }
-/*///////////////////// WALL TWO /////////////////////////////////*/
+/*########## WALL TWO ##########*/
 .wallTwo {
   position: absolute;
   width: 55px;
@@ -87,7 +87,7 @@ body {
     bottom: 0;
     height: 340px;
 }
-/*//////////////////// End of WALLTWO /////////////////////*/
+/*########## WALL END ##########*/
 #buttonOne {
     text-align: center;
     margin: 25px;
