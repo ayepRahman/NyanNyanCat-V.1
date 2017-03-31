@@ -150,20 +150,20 @@ $(document).ready(function() {
         // The .offset() method allows us to retrieve the current position of an element relative to the document.
         // The outerHeight() Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer height of every matched element.
         //
-        var x1 = $catpstn.offset().left // cat position on left
-        var y1 = $catpstn.offset().top // cat position on top
-        var h1 = $catpstn.outerHeight(true) // cat height position b4 hitting
-        var w1 = $catpstn.outerWidth(true) // cat outerWidth b4 hitting
-        var b1 = y1 + h1 // spaces in between the height
-        var r1 = x1 + w1 // space in between
-        var x2 = $wallpstn.offset().left // wall position left
-        var y2 = $wallpstn.offset().top // wall position top
-        var h2 = $wallpstn.outerHeight(true) // wall height
-        var w2 = $wallpstn.outerWidth(true) // wall width
-        var b2 = y2 + h2 // wall spaces height
-        var r2 = x2 + w2 // wall space width
+        var $catLeftPst = $catpstn.offset().left // cat position on left
+        var $catTopPst = $catpstn.offset().top // cat position on top
+        var $catOuterHeight = $catpstn.outerHeight(true) // cat height position b4 hitting
+        var $catOuterWidth = $catpstn.outerWidth(true) // cat outerWidth b4 hitting
+        var $catCollisionHeight = $catTopPst + $catOuterHeight // spaces in between the height
+        var $catCollsionWidth = $catLeftPst + $catOuterWidth // sp ace in between
+        var $wallLeftPst = $wallpstn.offset().left // wall position left
+        var $wallTopPst = $wallpstn.offset().top // wall position top
+        var $wallHeightPst = $wallpstn.outerHeight(true) // wall height
+        var $wallWidthPst = $wallpstn.outerWidth(true) // wall width
+        var $wallCollisionHght = $wallTopPst + $wallHeightPst // wall spaces height
+        var $wallCollsionWidth = $wallLeftPst + $wallWidthPst // wall space width
 
-        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
+        if ($catCollisionHeight < $wallTopPst || $catTopPst > $wallCollisionHght || $catCollsionWidth < $wallLeftPst || $catLeftPst > $wallCollsionWidth) {
             return false
         }
         return true
