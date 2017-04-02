@@ -6,7 +6,7 @@ body {
 
 #background {
     background: url('./image/myBgImg.jpg');
-    height: 1200px;
+    height: 800px;
 }
 
 #newTitle {
@@ -18,17 +18,6 @@ body {
     text-align: center;
 }
 
-#instruction {
-    font-family: 'Lobster', cursive;
-    font-size: 35px;
-    color: #1F1226;
-    margin: auto;
-    width: 20%;
-    text-align: center;
-    background-color: white;
-    border: 5px solid #BB6CE5;
-    border-radius: 20px;
-}
 
 #container {
     height: 600px;
@@ -50,6 +39,35 @@ body {
     width: 70px;
     top: 200px;
     left: 10%;
+}
+
+#instruction {
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+  color: #1F1226;
+  margin: auto;
+  width: 350px;
+  top: 100px;
+  left: 80px;
+  text-align: center;
+  background-color: white;
+  border: 5px solid #BB6CE5;
+  border-radius: 20px;
+  position: absolute;
+}
+
+#restartBttn {
+  border: 5px solid #BB6CE5;
+  border-radius: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  color: #1F1226;
+  cursor: pointer;
+  text-align: center;
+  top: 250px;
+  left: 180px;
+  position: absolute;
+  display: none;
 }
 /*########## WALL ONE ##########*/
 .wallOne {
@@ -88,42 +106,22 @@ body {
     height: 80px;
 }
 /*########## WALL END ##########*/
-#buttonOne {
+/*#buttonOne {
     text-align: center;
     margin: 25px;
-}
+}*/
 
 #buttonTwo {
   text-align: center;
   margin: 25px;
 }
 
-#startButton {
-    border: 5px solid #BB6CE5;
-    border-radius: 20px;
-    font-family: 'Lobster', cursive;
-    font-size: 50px;
-    color: #1F1226;
-    cursor: pointer;
-    text-align: center;
-}
-
-#restartBttn {
-    border: 5px solid #BB6CE5;
-    border-radius: 20px;
-    font-family: 'Lobster', cursive;
-    font-size: 50px;
-    color: #1F1226;
-    cursor: pointer;
-    text-align: center;
-}
 
 #scoreDiv {
     font-family: 'Lobster', cursive;
     font-size: 40px;
     color: #BB6CE5;
     text-align: center;
-    margin: 5px;
 }
 
 .scSpd {

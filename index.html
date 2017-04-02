@@ -6,29 +6,35 @@
     <title>NyanNyan Cat V.1</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="background" src='./image/myBgImg.jpg'>
         <div id="newTitle">NyanNyan Cat V.1</div>
+        <div id="scoreDiv">Score: <span id="score" class="scSpd">0</span>
+        </div>
         <div id='container' src='./image/containerImg.png'>
             <div id="nyan" src='./image/catNyan.gif'></div>
+            <div id='instruction'>Instruction: Press Enter To Jump</div>
+            <button id='restartBttn' type="button" name="button">Restart</button>
+            <!--WALLS-->
             <div id="topWallOne" class="wallOne"></div>
             <div id="bottomWallOne" class="wallOne"></div>
             <div id='topWallTwo' class='wallTwo'></div>
             <div id="bottomWallTwo" class='wallTwo'></div>
         </div>
-          <h1 id='instruction'>Instruction: Press Enter To Jump</h1>
-          <div id="buttonOne">
-            <button id='restartBttn' type="button" name="button">Restart</button>
-        </div>
-        <div id="scoreDiv">
-            <p><b>Score: </b><span id="score" class="scSpd">0</span></p>
-            <!-- <p><b>Speed: </b><span id="speed" class="scSpd">1</span></p> -->
-        </div>
+
+        <!-- <div id="buttonOne">
+
+        </div> -->
+        <!-- <div id="buttonTwo">
+
+        </div> -->
     </div>
     <audio src="media\NyanCatoriginal.ogg"></audio>
     <audio src="media\DeathSound.mp3"></audio>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src='script.js'></script>
 </body>
+
 </html>
