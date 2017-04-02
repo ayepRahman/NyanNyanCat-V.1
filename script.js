@@ -116,7 +116,7 @@ $(document).ready(function () {
       $(document).on('keydown', function (e) {
         var key = e.keyCode
         if ($gameOver === false) { // stops the key from pressing
-          if (key === 13 && $jumpCat === false) {
+          if (key === 32 && $jumpCat === false) {
             $jumpCat = setInterval(flyUp, 13)
           }
         }
@@ -124,7 +124,7 @@ $(document).ready(function () {
       /* #################### */
       $(document).on('keyup', function (e) {
         var key = e.keyCode
-        if (key === 13) {
+        if (key === 32) {
           clearInterval($jumpCat)
           $jumpCat = false
         }
