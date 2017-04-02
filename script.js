@@ -105,7 +105,6 @@ $(document).ready(function () {
     if ($jumpCat === false) {
       gravity()
 
-
       // after cat is jump by pixel/height it run the gravity funtion down
     }
     $wallOne.css('right', $wallOneCurrentPosition + $speedPixel)
@@ -136,7 +135,7 @@ $(document).ready(function () {
   }
   /* ########## GRAVITY CAT ########## */
   function gravity () {
-    $cat.css('top', parseInt($cat.css('top')) + $gravity )
+    $cat.css('top', parseInt($cat.css('top')) + $gravity)
     // creating a gravity tt pushes the cat down
   }
 
