@@ -176,13 +176,3 @@ $(document).ready(function () {
         return true
       }
     })
-
-
-
-
-
-
-  //       $("#SplashScreen").hide();
-  //       $("#GameCanvas").show();
-// $("#nyan").hide();
-// $(".wallOne").hide();
