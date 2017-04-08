@@ -1,6 +1,6 @@
 # NyanNyan Cat V.1
 
-[Live Demo Here](https://wdi-sg.github.io/wdi-project-1-ayepRahman/)
+[Live Demo Here](https://ayeprahman.github.io/NyanNyanCat-V.1/)
 
 
 ![NyanNyan Cat V.1 LOGO](http://i.imgur.com/gDEA5mD.png)
